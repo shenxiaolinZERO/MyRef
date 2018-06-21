@@ -21743,11 +21743,112 @@ r -> to contextual topics},
   url       = {http://doi.acm.org/10.1145/2939672.2939673},
 }
 
+@InProceedings{Mele2017Linking,
+  author    = {Mele, Ida and Bahrainian, Seyed Ali and Crestani, Fabio},
+  title     = {Linking News Across Multiple Streams for Timeliness Analysis},
+  booktitle = {Proceedings of the 2017 ACM on Conference on Information and Knowledge Management},
+  year      = {2017},
+  series    = {CIKM '17},
+  pages     = {767--776},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  note      = {novelty minimum, good application},
+  abstract  = {Linking multiple news streams based on the reported events and analyzing the streams' temporal publishing patterns are two very important tasks for information analysis, discovering newsworthy stories, studying the event evolution, and detecting untrustworthy sources of information. In this paper, we propose techniques for cross-linking news streams based on the reported events with the purpose of analyzing the temporal dependencies among streams.
+
+Our research tackles two main issues: (1) how news streams are connected as reporting an event or the evolution of the same event and (2) how timely the newswires report related events using different publishing platforms. Our approach is based on dynamic topic modeling for detecting and tracking events over the timeline and on clustering news according to the events. We leverage the event-based clustering to link news across different streams and present two scoring functions for ranking the streams based on their timeliness in publishing news about a specific event.},
+  acmid     = {3132988},
+  doi       = {10.1145/3132847.3132988},
+  groups    = {LDA},
+  isbn      = {978-1-4503-4918-5},
+  keywords  = {dynamic topic modeling, event mining, news streams, temporal analysis},
+  location  = {Singapore, Singapore},
+  numpages  = {10},
+  review    = {challenge1: emerging topic
+		solution: dDTM, non-linear dependency
+		challenge2: number of topics undetermined
+		solution: Bayesian model comparing
+		framework: dTM -> topic as observations, HMM chain -> topics as dimensions, clustering to events 
+		HMM number of states: BIC 
+		applications: frequent pattern mining, ranking based on timeliness
+
+200 topics},
+  url       = {http://doi.acm.org/10.1145/3132847.3132988},
+}
+
+@InProceedings{Takeda2017Evolution,
+  author    = {Takeda, Naoto and Seki, Yohei and Morishita, Mimpei and Inagaki, Yoichi},
+  title     = {Evolution of Information Needs Based on Life Event Experiences with Topic Transition},
+  booktitle = {Proceedings of the 40th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  year      = {2017},
+  series    = {SIGIR '17},
+  pages     = {1009--1012},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {We propose a method to clarify the evolution of users' information needs related to a user's interests and actions based upon life events such as "childbirth." First, we extract topic transitions using dynamic topic models from blogs posted by users who have experienced life events. Next, we select the topics by computing the differences in topic probabilities before and after the life event. We evaluated our method based on three life events: "childbirth," "finding employment," and "marriage." Our method selected life event-relevant topics such as "child development," "working life," and "wedding ceremony." We found mothers' information needs such as "how to introduce baby food," employees' information needs such as "preparing an induction programme," and couples' information needs such as "wedding reception planning" in each topic.},
+  acmid     = {3080703},
+  doi       = {10.1145/3077136.3080703},
+  groups    = {LDA},
+  isbn      = {978-1-4503-5022-8},
+  keywords  = {dtms (dynamic topic models), information needs, life event},
+  location  = {Shinjuku, Tokyo, Japan},
+  numpages  = {4},
+  review    = {DTM -> select life event relevant topics, compute difference in topic probabilities before and after life event (mean and variance)},
+  url       = {http://doi.acm.org/10.1145/3077136.3080703},
+}
+
+@InProceedings{Zhang2015Dynamic,
+  author    = {Zhang, Hao and Kim, Gunhee and Xing, Eric P.},
+  title     = {Dynamic Topic Modeling for Monitoring Market Competition from Online Text and Image Data},
+  booktitle = {Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  year      = {2015},
+  series    = {KDD '15},
+  pages     = {1425--1434},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {We propose a dynamic topic model for monitoring temporal evolution of market competition by jointly leveraging tweets and their associated images. For a market of interest (e.g. luxury goods), we aim at automatically detecting the latent topics (e.g. bags, clothes, luxurious) that are competitively shared by multiple brands (e.g. Burberry, Prada, and Chanel), and tracking temporal evolution of the brands' stakes over the shared topics. One of key applications of our work is social media monitoring that can provide companies with temporal summaries of highly overlapped or discriminative topics with their major competitors. We design our model to correctly address three major challenges: multiview representation of text and images, modeling of competitiveness of multiple brands over shared topics, and tracking their temporal evolution. As far as we know, no previous model can satisfy all the three challenges. For evaluation, we analyze about 10 millions of tweets and 8 millions of associated images of the 23 brands in the two categories of luxury and beer. Through experiments, we show that the proposed approach is more successful than other candidate methods for the topic modeling of competition. We also quantitatively demonstrate the generalization power of the proposed method for three prediction tasks.},
+  acmid     = {2783293},
+  doi       = {10.1145/2783258.2783293},
+  groups    = {LDA},
+  isbn      = {978-1-4503-3664-2},
+  keywords  = {dynamic topic models, market competition, text and images},
+  location  = {Sydney, NSW, Australia},
+  numpages  = {10},
+  review    = {DTM 
+word, visual, brand
+},
+  url       = {http://doi.acm.org/10.1145/2783258.2783293},
+}
+
+@InProceedings{Zhu2016Recruitment,
+  author    = {Zhu, Chen and Zhu, Hengshu and Xiong, Hui and Ding, Pengliang and Xie, Fang},
+  title     = {Recruitment Market Trend Analysis with Sequential Latent Variable Models},
+  booktitle = {Proceedings of the 22Nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  year      = {2016},
+  series    = {KDD '16},
+  pages     = {383--392},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  note      = {well},
+  abstract  = {Recruitment market analysis provides valuable understanding of industry-specific economic growth and plays an important role for both employers and job seekers. With the rapid development of online recruitment services, massive recruitment data have been accumulated and enable a new paradigm for recruitment market analysis. However, traditional methods for recruitment market analysis largely rely on the knowledge of domain experts and classic statistical models, which are usually too general to model large-scale dynamic recruitment data, and have difficulties to capture the fine-grained market trends. To this end, in this paper, we propose a new research paradigm for recruitment market analysis by leveraging unsupervised learning techniques for automatically discovering recruitment market trends based on large-scale recruitment data. Specifically, we develop a novel sequential latent variable model, named MTLVM, which is designed for capturing the sequential dependencies of corporate recruitment states and is able to automatically learn the latent recruitment topics within a Bayesian generative framework. In particular, to capture the variability of recruitment topics over time, we design hierarchical dirichlet processes for MTLVM. These processes allow to dynamically generate the evolving recruitment topics. Finally, we implement a prototype system to empirically evaluate our approach based on real-world recruitment data in China. Indeed, by visualizing the results from MTLVM, we can successfully reveal many interesting findings, such as the popularity of LBS related jobs reached the peak in the 2nd half of 2014, and decreased in 2015.},
+  acmid     = {2939689},
+  doi       = {10.1145/2939672.2939689},
+  groups    = {LDA},
+  isbn      = {978-1-4503-4232-2},
+  keywords  = {latent variable model, recruitment market, trend analysis},
+  location  = {San Francisco, California, USA},
+  numpages  = {10},
+  review    = {MTLVM : recruit state evolves, transition matrix \rho
+ generation: recuit state, strategy -> demand -> topic -> word 
+CRP 
+},
+  url       = {http://doi.acm.org/10.1145/2939672.2939689},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;
-1 StaticGroup:Recommender Systems\;0\;1\;\;\;\;;
+1 StaticGroup:Recommender Systems\;0\;0\;\;\;\;;
 2 StaticGroup:Knowledge graph\;0\;1\;\;\;\;;
 2 StaticGroup:Psychological\;0\;1\;\;\;\;;
 1 StaticGroup:Statistical Model\;0\;1\;\;\;\;;
