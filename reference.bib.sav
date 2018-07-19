@@ -21871,14 +21871,7 @@ The advances in mobile computing and social networking services enable people to
   acmid     = {2835837},
   comment   = {a general NN framework for top-N recommendation 
 for implicit feedback 1-0
-first, randomly drop-out/mask-out noise, by overwriting some of the positive feedback to be 0 by probability "q". to make it unbiased, scale these feedback to be  1/1-q by probability 1-q
-then, each user is represented as a I+1 dimensional vector, where I is the size of the item universe, the rest is the user-specific node (user-id)
-a hidden layer with K nodes and an additional bias node
-input-> hidden layer mapping could be identity or sigmoid function
-output all observations, without user ids, without corruptions
-hidden layer to output could be identity or sigmoid too
-loss function is the L2-regularized square or logistic 
-denoising helps!},
+first, randomly drop-out/mask-out noise, by overwriting some of the  feedback to be 0 by probability "q". to make it unbiased, scale these feedback to be  },
   doi       = {10.1145/2835776.2835837},
   isbn      = {978-1-4503-3716-8},
   keywords  = {collaborative filtering, denoising auto- encoders, recommender systems},
