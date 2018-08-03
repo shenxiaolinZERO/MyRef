@@ -22396,6 +22396,166 @@ so the outcomes of labels are all observed},
   url       = {http://doi.acm.org/10.1145/3097983.3098066},
 }
 
+@InProceedings{Cheng2017Learning,
+  author    = {Cheng, Peizhe and Wang, Shuaiqiang and Ma, Jun and Sun, Jiankai and Xiong, Hui},
+  title     = {Learning to Recommend Accurate and Diverse Items},
+  booktitle = {Proceedings of the 26th International Conference on World Wide Web},
+  year      = {2017},
+  series    = {WWW '17},
+  pages     = {183--192},
+  address   = {Republic and Canton of Geneva, Switzerland},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  abstract  = {In this study, we investigate diversified recommendation problem by supervised learning, seeking significant improvement in diversity while maintaining accuracy. In particular, we regard each user as a training instance, and heuristically choose a subset of accurate and diverse items as ground-truth for each user. We then represent each user or item as a vector resulted from the factorization of the user-item rating matrix. In our paper, we try to discover a factorization for matching the following supervised learning task. In doing this, we define two coupled optimization problems, parameterized matrix factorization and structural learning, to formulate our task. And we propose a diversified collaborative filtering algorithm (DCF) to solve the coupled problems. We also introduce a new pairwise accuracy metric and a normalized topic coverage diversity metric to measure the performance of accuracy and diversity respectively. Extensive experiments on benchmark datasets show the performance gains of DCF in comparison with the state-of-the-art algorithms.},
+  acmid     = {3052585},
+  comment   = {problem: input rating data, output accurate and diversified items
+
+model:structural SVM 
+
+rating -> r = uSv, s = diagonal matrix of parameters
+boundary w^T (\phi(x)-\phi(x')) \geq loss (pair)
+x x' pairwise,
+x positive samples, (1) filter high rated > average user-specific rating, controlled by a parameter \gamma (2) greedily choose l items maximizing the F-measure, w.r.t. accuracy and diversity
+x' other rated items
+\phi(x) feature vectors including rating approximation differences, item , regularizers and L1 regularizers
+
+},
+  doi       = {10.1145/3038912.3052585},
+  isbn      = {978-1-4503-4913-0},
+  keywords  = {collaborative filtering, diversity, recommender systems, structural svm},
+  location  = {Perth, Australia},
+  numpages  = {10},
+  url       = {https://doi.org/10.1145/3038912.3052585},
+}
+
+@InProceedings{Koyejo2013Retargeted,
+  author    = {Koyejo, Oluwasanmi and Acharyya, Sreangsu and Ghosh, Joydeep},
+  title     = {Retargeted Matrix Factorization for Collaborative Filtering},
+  booktitle = {Proceedings of the 7th ACM Conference on Recommender Systems},
+  year      = {2013},
+  series    = {RecSys '13},
+  pages     = {49--56},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {The ranking quality at the top of the list is crucial in many real-world applications of recommender systems. In this paper, we present a novel framework that allows for pointwise as well as listwise training with respect to various ranking metrics. This is based on a training objective function where we assume that, for given a user, the recommender system predicts scores for all items that follow approximately a Gaussian distribution. We motivate this assumption from the properties of implicit feedback data. As a model, we use matrix factorization and extend it by non-linear activation functions, as customary in the literature of artificial neural networks. In particular, we use non-linear activation functions derived from our Gaussian assumption. Our preliminary experimental results show that this approach is competitive with state-of-the-art methods with respect to optimizing the Area under the ROC curve, while it is particularly effective in optimizing the head of the ranked list.},
+  acmid     = {2507185},
+  comment   = {1 },
+  doi       = {10.1145/2507157.2507185},
+  isbn      = {978-1-4503-2409-0},
+  keywords  = {collaborative filtering, learning to rank, matrix factorization},
+  location  = {Hong Kong, China},
+  numpages  = {8},
+  url       = {http://doi.acm.org/10.1145/2507157.2507185},
+}
+
+@InProceedings{Steck2015Gaussian,
+  author    = {Steck, Harald},
+  title     = {Gaussian Ranking by Matrix Factorization},
+  booktitle = {Proceedings of the 9th ACM Conference on Recommender Systems},
+  year      = {2015},
+  series    = {RecSys '15},
+  pages     = {115--122},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {The ranking quality at the top of the list is crucial in many real-world applications of recommender systems. In this paper, we present a novel framework that allows for pointwise as well as listwise training with respect to various ranking metrics. This is based on a training objective function where we assume that, for given a user, the recommender system predicts scores for all items that follow approximately a Gaussian distribution. We motivate this assumption from the properties of implicit feedback data. As a model, we use matrix factorization and extend it by non-linear activation functions, as customary in the literature of artificial neural networks. In particular, we use non-linear activation functions derived from our Gaussian assumption. Our preliminary experimental results show that this approach is competitive with state-of-the-art methods with respect to optimizing the Area under the ROC curve, while it is particularly effective in optimizing the head of the ranked list.},
+  acmid     = {2800185},
+  comment   = {SVD++
+user = neighbor items vector (another parameter space)
+latent item vector
+
+NN interpretation
+
+ranking loss 
+derivative of the ranking loss can be decomposed to 
+derivative wrt to the ranking
+ranking wrt to normalized score, which is a probit function, if the score is Gaussian distributed. is a hinge loss if it is a linear function
+normalized score wrt to  score, 1/std_u for each user
+score to parameter
+
+loss wrt to rank
+ AUC = 1/N+N_ [(N+1) N+ - C2(N++1) - \sum r+]
+NDCG = \sum 1/log (r++1)
+
+},
+  doi       = {10.1145/2792838.2800185},
+  isbn      = {978-1-4503-3692-5},
+  keywords  = {collaborative filtering, learning to rank, matrix factorization, recommender systems},
+  location  = {Vienna, Austria},
+  numpages  = {8},
+  url       = {http://doi.acm.org/10.1145/2792838.2800185},
+}
+
+@InProceedings{Hu2017Decoupled,
+  author    = {Hu, Jun and Li, Ping},
+  title     = {Decoupled Collaborative Ranking},
+  booktitle = {Proceedings of the 26th International Conference on World Wide Web},
+  year      = {2017},
+  series    = {WWW '17},
+  pages     = {1321--1329},
+  address   = {Republic and Canton of Geneva, Switzerland},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  abstract  = {We propose a new pointwise collaborative ranking approach for recommender systems, which focuses on improving ranking performance at the top of recommended list. Our approach is different from common pointwise methods in that we consider user ratings as ordinal rather than viewing them as real values or categorical labels. In addition, positively rated items (higher rating scores) are emphasized more in our method in order to improve the performance at the top of recommended list.
+
+In our method, user ratings are modeled based on an ordinal classification framework, which is made up of a sequence of binary classification problems in which one discriminates between ratings no less than a specific ordinal category c and ratings below that category ({̥ c}vs.{< c}). The results are used subsequently to generate a ranking score that puts higher weights on the output of those binary classification problems concerning high values of c so as to improve the ranking performance at the top of list. As our method crucially builds on a decomposition into binary classification problems, we call our proposed method as Decoupled Collaborative Ranking (DCR). As an extension, we impose pairwise learning on DCR, which yields further improvement with regard to the ranking performance of the proposed method. We demonstrate through extensive experiments on benchmark datasets that our method outperforms many considered state-of-the-art collaborative ranking algorithms in terms of the NDCG metric.},
+  acmid     = {3052685},
+  comment   = {rating = ordinal categorical labels
+s-level rating matrix -> S ordinal binary categorical matrix
+
+for each binary matrix R=UV
+p(r=1)=uv+1/2, wrt, |u|\leq 1, |v|\leq 1
+maximal log likelihood 
+
+from binary classification to ranking: 
+SC_{ui}=\sum t f(t)P(r_{ui}=t)
+where f(t) is the score relevance
+
+P(r_{ui}=t)=p(r_{ui}\geq t)- p(r_{ui}\geq t+1)
+
+for topN recommendation, f(t) is a monotone increasing function of relevance level t
+
+extension: loss = Indicator g(u,i,j)
+g(u,i,j)=SC_{ui}-SC{uj}},
+  doi       = {10.1145/3038912.3052685},
+  isbn      = {978-1-4503-4913-0},
+  keywords  = {collaborative ranking, matrix factorization, recommender systems},
+  location  = {Perth, Australia},
+  numpages  = {9},
+  timestamp = {2018-08-03},
+  url       = {https://doi.org/10.1145/3038912.3052685},
+}
+
+@InProceedings{Christakopoulou2015Collaborative,
+  author    = {Christakopoulou, Konstantina and Banerjee, Arindam},
+  title     = {Collaborative Ranking with a Push at the Top},
+  booktitle = {Proceedings of the 24th International Conference on World Wide Web},
+  year      = {2015},
+  series    = {WWW '15},
+  pages     = {205--215},
+  address   = {Republic and Canton of Geneva, Switzerland},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  abstract  = {The goal of collaborative filtering is to get accurate recommendations at the top of the list for a set of users. From such a perspective, collaborative ranking based formulations with suitable ranking loss functions are natural. While recent literature has explored the idea based on objective functions such as NDCG or Average Precision, such objectives are difficult to optimize directly. In this paper, building on recent advances from the learning to rank literature, we introduce a novel family of collaborative ranking algorithms which focus on accuracy at the top of the list for each user while learning the ranking functions collaboratively. We consider three specific formulations, based on collaborative p-norm push, infinite push, and reverse-height push, and propose efficient optimization methods for learning these models. Experimental results illustrate the value of collaborative ranking, and show that the proposed methods are competitive, usually better than existing popular approaches to personalized recommendation.},
+  acmid     = {2741678},
+  comment   = {height of a non-relevant item is the number of relevant examples ranked below it by the learned ranking function
+so the goal is to make the heights of non-relevant items small
+or height of the relevant items big (reverse height)
+
+hight originally is the \sum [f(k+)\leq f(j-)]
+make a difference, \delta (k,j) = f(k+)-f(j-)
+the logistic loss of the difference as the surrogate 
+and \delta=u(vk-vj)
+
+objective = 
+p-norm = the sum wrt negative of surrogate loss
+infinite = max wrt negative
+reverse = inverse log function 
+},
+  doi       = {10.1145/2736277.2741678},
+  isbn      = {978-1-4503-3469-3},
+  keywords  = {collaborative ranking, infinite push, recommender systems},
+  location  = {Florence, Italy},
+  numpages  = {11},
+  url       = {https://doi.org/10.1145/2736277.2741678},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
