@@ -8911,6 +8911,7 @@ response (not rating) = 1- (1-U)(1-M)(1-T)},
   year         = {2008},
   pages        = {426--434},
   organization = {ACM},
+  abstract     = {Recommender systems provide users with personalized suggestions for products or services. These systems often rely on Collaborating Filtering (CF), where past transactions are analyzed in order to establish connections between users and products. The two more successful approaches to CF are latent factor models, which directly profile both users and products, and neighborhood models, which analyze similarities between products or users. In this work we introduce some innovations to both approaches. The factor and neighborhood models can now be smoothly merged, thereby building a more accurate combined model. Further accuracy improvements are achieved by extending the models to exploit both explicit and implicit feedback by the users. The methods are tested on the Netflix data. Results are better than those previously published on that dataset. In addition, we suggest a new evaluation metric, which highlights the differences among methods, based on their performance at a top-K recommendation task.},
   file         = {Koren2008Factorization.PDF:Koren2008Factorization.PDF:PDF},
   groups       = {Recommender Systems},
 }
@@ -22673,9 +22674,14 @@ missing entries are usually assigned to a zero rui value but non-zero wui weight
 
 Alternating Least Square (derivative = zero ) involves matrix inversion 
 previous study sets missing weight to be uniform (same )
+element wise ALS more efficient by avoiding matrix inversion
 
 it is desired to assign a higher weight to the negative feedback
-the first term denotes the prediction error of the observed entries, The second term accounts for the miss- ing data},
+the first term denotes the prediction error of the observed entries, The second term accounts for the miss- ing data with confidence related to item popularity
+confidence of item i = c_o (base coefficient ) popularity of this item ^ power of \alpha / \sum_ all items popularity of item^ power of \alpha
+
+good explanation on why negative sampling underperforms for BPR, due to SGD
+eALS avoids this by exact optimization},
   doi       = {10.1145/2911451.2911489},
   isbn      = {978-1-4503-4069-4},
   keywords  = {ALS, coordinate descent, implicit feedback, item recommendation, matrix factorization, online learning},
@@ -22683,6 +22689,49 @@ the first term denotes the prediction error of the observed entries, The second 
   numpages  = {10},
   timestamp = {2018-08-07},
   url       = {http://doi.acm.org/10.1145/2911451.2911489},
+}
+
+@InProceedings{Zhang2017Modeling,
+  author    = {Zhang, Xiaoying and Zhao, Junzhou and Lui, John C.S.},
+  title     = {Modeling the Assimilation-Contrast Effects in Online Product Rating Systems: Debiasing and Recommendations},
+  booktitle = {Proceedings of the Eleventh ACM Conference on Recommender Systems},
+  year      = {2017},
+  series    = {RecSys '17},
+  pages     = {98--106},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {The unbiasedness of online product ratings, an important property to ensure that users' ratings indeed reflect their true evaluations to products, is vital both in shaping consumer purchase decisions and providing reliable recommendations. Recent experimental studies showed that distortions from historical ratings would ruin the unbiasedness of subsequent ratings. How to "discover" the distortions from historical ratings in each single rating (or at the micro-level), and perform the "debiasing operations" in real rating systems are the main objectives of this work.
+Using 42 million real customer ratings, we first show that users either "assimilate" or "contrast" to historical ratings under different scenarios: users conform to historical ratings if historical ratings are not far from the product quality (assimilation), while users deviate from historical ratings if historical ratings are significantly different from the product quality (contrast). This phenomenon can be explained by the well-known psychological argument: the "Assimilate-Contrast" theory. However, none of the existing works on modeling historical ratings' influence have taken this into account, and this motivates us to propose the Historical Influence Aware Latent Factor Model (HIALF), the first model for real rating systems to capture and mitigate historical distortions in each single rating. HIALF also allows us to study the influence patterns of historical ratings from a modeling perspective, and it perfectly matches the assimilation and contrast effects we previously observed. Also, HIALF achieves significant improvements in predicting subsequent ratings, and accurately predicts the relationships revealed in previous empirical measurements on real ratings. Finally, we show that HIALF can contribute to better recommendations by decoupling users' real preference from distorted ratings, and reveal the intrinsic product quality for wiser consumer purchase decisions.},
+  acmid     = {3109885},
+  comment   = {biases in rating},
+  doi       = {10.1145/3109859.3109885},
+  isbn      = {978-1-4503-4652-8},
+  keywords  = {modeling and debiasing historical ratings' influence, recommender systems},
+  location  = {Como, Italy},
+  numpages  = {9},
+  url       = {http://doi.acm.org/10.1145/3109859.3109885},
+}
+
+@InProceedings{,
+}
+
+@InProceedings{Sharma2013Pairwise,
+  author    = {Sharma, Amit and Yan, Baoshi},
+  title     = {Pairwise Learning in Recommendation: Experiments with Community Recommendation on Linkedin},
+  booktitle = {Proceedings of the 7th ACM Conference on Recommender Systems},
+  year      = {2013},
+  series    = {RecSys '13},
+  pages     = {193--200},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Many online systems present a list of recommendations and infer user interests implicitly from clicks or other contextual actions. For modeling user feedback in such settings, a common approach is to consider items acted upon to be relevant to the user, and irrelevant otherwise. However, clicking some but not others conveys an implicit ordering of the presented items. Pairwise learning, which leverages such implicit ordering between a pair of items, has been successful in areas such as search ranking. In this work, we study whether pairwise learning can improve community recommendation. We first present two novel pairwise models adapted from logistic regression. Both offline and online experiments in a large real-world setting show that incorporating pairwise learning improves the recommendation performance. However, the improvement is only slight. We find that users' preferences regarding the kinds of communities they like can differ greatly, which adversely affect the effectiveness of features derived from pairwise comparisons. We therefore propose a probabilistic latent semantic indexing model for pairwise learning (Pairwise PLSI), which assumes a set of users' latent preferences between pairs of items. Our experiments show favorable results for the Pairwise PLSI model and point to the potential of using pairwise learning for community recommendation.},
+  acmid     = {2507175},
+  doi       = {10.1145/2507157.2507175},
+  isbn      = {978-1-4503-2409-0},
+  keywords  = {community recommendation, pairwise learning},
+  location  = {Hong Kong, China},
+  numpages  = {8},
+  url       = {http://doi.acm.org/10.1145/2507157.2507175},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

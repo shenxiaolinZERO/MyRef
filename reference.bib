@@ -8911,6 +8911,7 @@ response (not rating) = 1- (1-U)(1-M)(1-T)},
   year         = {2008},
   pages        = {426--434},
   organization = {ACM},
+  abstract     = {Recommender systems provide users with personalized suggestions for products or services. These systems often rely on Collaborating Filtering (CF), where past transactions are analyzed in order to establish connections between users and products. The two more successful approaches to CF are latent factor models, which directly profile both users and products, and neighborhood models, which analyze similarities between products or users. In this work we introduce some innovations to both approaches. The factor and neighborhood models can now be smoothly merged, thereby building a more accurate combined model. Further accuracy improvements are achieved by extending the models to exploit both explicit and implicit feedback by the users. The methods are tested on the Netflix data. Results are better than those previously published on that dataset. In addition, we suggest a new evaluation metric, which highlights the differences among methods, based on their performance at a top-K recommendation task.},
   file         = {Koren2008Factorization.PDF:Koren2008Factorization.PDF:PDF},
   groups       = {Recommender Systems},
 }
@@ -22688,6 +22689,27 @@ eALS avoids this by exact optimization},
   numpages  = {10},
   timestamp = {2018-08-07},
   url       = {http://doi.acm.org/10.1145/2911451.2911489},
+}
+
+@InProceedings{Zhang2017Modeling,
+  author    = {Zhang, Xiaoying and Zhao, Junzhou and Lui, John C.S.},
+  title     = {Modeling the Assimilation-Contrast Effects in Online Product Rating Systems: Debiasing and Recommendations},
+  booktitle = {Proceedings of the Eleventh ACM Conference on Recommender Systems},
+  year      = {2017},
+  series    = {RecSys '17},
+  pages     = {98--106},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {The unbiasedness of online product ratings, an important property to ensure that users' ratings indeed reflect their true evaluations to products, is vital both in shaping consumer purchase decisions and providing reliable recommendations. Recent experimental studies showed that distortions from historical ratings would ruin the unbiasedness of subsequent ratings. How to "discover" the distortions from historical ratings in each single rating (or at the micro-level), and perform the "debiasing operations" in real rating systems are the main objectives of this work.
+Using 42 million real customer ratings, we first show that users either "assimilate" or "contrast" to historical ratings under different scenarios: users conform to historical ratings if historical ratings are not far from the product quality (assimilation), while users deviate from historical ratings if historical ratings are significantly different from the product quality (contrast). This phenomenon can be explained by the well-known psychological argument: the "Assimilate-Contrast" theory. However, none of the existing works on modeling historical ratings' influence have taken this into account, and this motivates us to propose the Historical Influence Aware Latent Factor Model (HIALF), the first model for real rating systems to capture and mitigate historical distortions in each single rating. HIALF also allows us to study the influence patterns of historical ratings from a modeling perspective, and it perfectly matches the assimilation and contrast effects we previously observed. Also, HIALF achieves significant improvements in predicting subsequent ratings, and accurately predicts the relationships revealed in previous empirical measurements on real ratings. Finally, we show that HIALF can contribute to better recommendations by decoupling users' real preference from distorted ratings, and reveal the intrinsic product quality for wiser consumer purchase decisions.},
+  acmid     = {3109885},
+  comment   = {biases in rating},
+  doi       = {10.1145/3109859.3109885},
+  isbn      = {978-1-4503-4652-8},
+  keywords  = {modeling and debiasing historical ratings' influence, recommender systems},
+  location  = {Como, Italy},
+  numpages  = {9},
+  url       = {http://doi.acm.org/10.1145/3109859.3109885},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
