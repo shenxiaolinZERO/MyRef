@@ -9676,9 +9676,20 @@ response (not rating) = 1- (1-U)(1-M)(1-T)},
 	shows that this extension can help to measurably increase the predictive
 	accuracy of BPR on realistic e-commerce datasets.},
   acmid     = {2645759},
-  comment   = {what is BPR?
-	
-	how they grade??},
+  comment   = {BPR 
+
+graded means implicit feedback can be graded by e.g. recency 
+
+
+We assume that pweightpu,iq returns a positive number
+if an interaction between u and i exists, and 0 otherwise.
+A preference tuple pu, i, j q is therefore inferred whenever
+pweightpu, iq ą pweightpu, jq holds. Generally, the pweight
+function can encode arbitrary types of information, includ-
+ing, e.g., the time or recency aspects as mentioned above.
+The extended set of preference relations D`` for each user S
+u is defined as follows:
+D`` :“ tpu, i, jq|pweightpu, iq ą pweightpu, jq, i P I, j P Iu},
   isbn      = {978-1-4503-2668-1},
   keywords  = {evaluation, implicit feedback, recommender systems},
   location  = {Foster City, Silicon Valley, California, USA},
@@ -22710,6 +22721,249 @@ Using 42 million real customer ratings, we first show that users either "assimil
   location  = {Como, Italy},
   numpages  = {9},
   url       = {http://doi.acm.org/10.1145/3109859.3109885},
+}
+
+@InProceedings{Rendle2014Improving,
+  author    = {Rendle, Steffen and Freudenthaler, Christoph},
+  title     = {Improving Pairwise Learning for Item Recommendation from Implicit Feedback},
+  booktitle = {Proceedings of the 7th ACM International Conference on Web Search and Data Mining},
+  year      = {2014},
+  series    = {WSDM '14},
+  pages     = {273--282},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Pairwise algorithms are popular for learning recommender systems from implicit feedback. For each user, or more generally context, they try to discriminate between a small set of selected items and the large set of remaining (irrelevant) items. Learning is typically based on stochastic gradient descent (SGD) with uniformly drawn pairs. In this work, we show that convergence of such SGD learning algorithms slows down considerably if the item popularity has a tailed distribution. We propose a non-uniform item sampler to overcome this problem. The proposed sampler is context-dependent and oversamples informative pairs to speed up convergence. An efficient implementation with constant amortized runtime costs is developed. Furthermore, it is shown how the proposed learning algorithm can be applied to a large class of recommender models. The properties of the new learning algorithm are studied empirically on two real-world recommender system problems. The experiments indicate that the proposed adaptive sampler improves the state-of-the art learning algorithm largely in convergence without negative effects on prediction quality or iteration runtime.},
+  acmid     = {2556248},
+  comment   = {
+apply it to MF and FM (factorization machines)},
+  doi       = {10.1145/2556195.2556248},
+  isbn      = {978-1-4503-2351-2},
+  keywords  = {factorization model, item recommendation, matrix factorization, recommender systems},
+  location  = {New York, New York, USA},
+  numpages  = {10},
+  url       = {http://doi.acm.org/10.1145/2556195.2556248},
+}
+
+@InProceedings{Shi2010List,
+  author    = {Shi, Yue and Larson, Martha and Hanjalic, Alan},
+  title     = {List-wise Learning to Rank with Matrix Factorization for Collaborative Filtering},
+  booktitle = {Proceedings of the Fourth ACM Conference on Recommender Systems},
+  year      = {2010},
+  series    = {RecSys '10},
+  pages     = {269--272},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {A ranking approach, ListRank-MF, is proposed for collaborative filtering that combines a list-wise learning-to-rank algorithm with matrix factorization (MF). A ranked list of items is obtained by minimizing a loss function that represents the uncertainty between training lists and output lists produced by a MF ranking model. ListRank-MF enjoys the advantage of low complexity and is analytically shown to be linear with the number of observed ratings for a given user-item matrix. We also experimentally demonstrate the effectiveness of ListRank-MF by comparing its performance with that of item-based collaborative recommendation and a related state-of-the-art collaborative ranking approach (CoFiRank).},
+  acmid     = {1864764},
+  doi       = {10.1145/1864708.1864764},
+  isbn      = {978-1-60558-906-0},
+  keywords  = {collaborative filtering, learning to rank, matrix factorization, recommendation, recommender systems},
+  location  = {Barcelona, Spain},
+  numpages  = {4},
+  url       = {http://doi.acm.org/10.1145/1864708.1864764},
+}
+
+@InProceedings{Weston2011Wsabie,
+  author    = {Weston, Jason and Bengio, Samy and Usunier, Nicolas},
+  title     = {Wsabie: Scaling up to large vocabulary image annotation},
+  booktitle = {IJCAI},
+  year      = {2011},
+  volume    = {11},
+  pages     = {2764--2770},
+}
+
+@InProceedings{Zhang2013Optimizing,
+  author    = {Zhang, Weinan and Chen, Tianqi and Wang, Jun and Yu, Yong},
+  title     = {Optimizing Top-n Collaborative Filtering via Dynamic Negative Item Sampling},
+  booktitle = {Proceedings of the 36th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  year      = {2013},
+  series    = {SIGIR '13},
+  pages     = {785--788},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Collaborative filtering techniques rely on aggregated user preference data to make personalized predictions. In many cases, users are reluctant to explicitly express their preferences and many recommender systems have to infer them from implicit user behaviors, such as clicking a link in a webpage or playing a music track. The clicks and the plays are good for indicating the items a user liked (i.e., positive training examples), but the items a user did not like (negative training examples) are not directly observed. Previous approaches either randomly pick negative training samples from unseen items or incorporate some heuristics into the learning model, leading to a biased solution and a prolonged training period. In this paper, we propose to dynamically choose negative training samples from the ranked list produced by the current prediction model and iteratively update our model. The experiments conducted on three large-scale datasets show that our approach not only reduces the training time, but also leads to significant performance gains.},
+  acmid     = {2484126},
+  doi       = {10.1145/2484028.2484126},
+  isbn      = {978-1-4503-2034-4},
+  keywords  = {negative item sampling, ranking-oriented collaborative filtering, recommender systems},
+  location  = {Dublin, Ireland},
+  numpages  = {4},
+  url       = {http://doi.acm.org/10.1145/2484028.2484126},
+}
+
+@InProceedings{Yu2016RankMBPR,
+  author    = {Yu, Lu and Zhou, Ge and Zhang, Chuxu and Huang, Junming and Liu, Chuang and Zhang, Zi-Ke},
+  title     = {RankMBPR: Rank-Aware Mutual Bayesian Personalized Ranking for Item Recommendation},
+  booktitle = {Web-Age Information Management},
+  year      = {2016},
+  editor    = {Cui, Bin and Zhang, Nan and Xu, Jianliang and Lian, Xiang and Liu, Dexi},
+  pages     = {244--256},
+  address   = {Cham},
+  publisher = {Springer International Publishing},
+  abstract  = {Previous works indicated that pairwise methods are state-of- the-art approaches to fit users' taste from implicit feedback. In this paper, we argue that constructing item pairwise samples for a fixed user is insufficient, because taste differences between two users with respect to a same item can not be explicitly distinguished. Moreover, the rank position of positive items are not used as a metric to measure the learning magnitude in the next step. Therefore, we firstly define a confidence function to dynamically control the learning step-size for updating model parameters. Sequently, we introduce a generic way to construct mutual pairwise loss from both users' and items' perspective. Instead of user-oriented pairwise sampling strategy alone, we incorporate item pairwise samples into a popular pairwise learning framework, bayesian personalized ranking (BPR), and propose mutual bayesian personalized ranking (MBPR) method. In addition, a rank-aware adaptively sampling strategy is proposed to come up with the final approach, called RankMBPR. Empirical studies are carried out on four real-world datasets, and experimental results in several metrics demonstrate the efficiency and effectiveness of our proposed method, comparing with other baseline algorithms.},
+  isbn      = {978-3-319-39937-9},
+}
+
+@Article{Liu2012Enhancing,
+  author   = {Qi Liu and Enhong Chen and Hui Xiong and Chris H. Q. Ding and Jian Chen},
+  title    = {Enhancing Collaborative Filtering by User Interest Expansion via Personalized Ranking},
+  journal  = {IEEE TRANSACTIONS ON SYSTEMS, MAN, AND CYBERNETICS—PART B: CYBERNETICS},
+  year     = {2012},
+  volume   = {42},
+  number   = {1},
+  pages    = {218-233},
+  abstract = {Recommender systems suggest a few items from many possible choices to the users by understanding their past behaviors. In these systems, the user behaviors are influenced by the hidden interests of the users. Learning to leverage the information about user interests is often critical for making better recommendations. However, existing collaborative-filtering-based recommender systems are usually focused on exploiting the in- formation about the user’s interaction with the systems; the in- formation about latent user interests is largely underexplored. To that end, inspired by the topic models, in this paper, we pro- pose a novel collaborative-filtering-based recommender system by user interest expansion via personalized ranking, named iExpand. The goal is to build an item-oriented model-based collaborative- filtering framework. The iExpand method introduces a three- layer, user–interests–item, representation scheme, which leads to more accurate ranking recommendation results with less compu- tation cost and helps the understanding of the interactions among users, items, and user interests. Moreover, iExpand strategically deals with many issues that exist in traditional collaborative- filtering approaches, such as the overspecialization problem and the cold-start problem. Finally, we evaluate iExpand on three benchmark data sets, and experimental results show that iExpand can lead to better ranking performance than state-of-the-art meth- ods with a significant margin.},
+  comment  = {LDA+ pagerank for topic transition + topic item correlation},
+}
+
+@InProceedings{Lee2014Local,
+  author    = {Lee, Joonseok and Bengio, Samy and Kim, Seungyeon and Lebanon, Guy and Singer, Yoram},
+  title     = {Local Collaborative Ranking},
+  booktitle = {Proceedings of the 23rd International Conference on World Wide Web},
+  year      = {2014},
+  series    = {WWW '14},
+  pages     = {85--96},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Personalized recommendation systems are used in a wide variety of applications such as electronic commerce, social networks, web search, and more. Collaborative filtering approaches to recommendation systems typically assume that the rating matrix (e.g., movie ratings by viewers) is low-rank. In this paper, we examine an alternative approach in which the rating matrix is locally low-rank. Concretely, we assume that the rating matrix is low-rank within certain neighborhoods of the metric space defined by (user, item) pairs. We combine a recent approach for local low-rank approximation based on the Frobenius norm with a general empirical risk minimization for ranking losses. Our experiments indicate that the combination of a mixture of local low-rank matrices each of which was trained to minimize a ranking loss outperforms many of the currently used state-of-the-art recommendation systems. Moreover, our method is easy to parallelize, making it a viable approach for large scale real-world rank-based recommendation systems.},
+  acmid     = {2567970},
+  comment   = {pairwise ranking
+
+local low rank + kernel},
+  doi       = {10.1145/2566486.2567970},
+  isbn      = {978-1-4503-2744-2},
+  keywords  = {collaborative filtering, ranking, recommender systems},
+  location  = {Seoul, Korea},
+  numpages  = {12},
+  url       = {http://doi.acm.org/10.1145/2566486.2567970},
+}
+
+@Article{Pan2015Adaptive,
+  author    = {Pan, Weike and Zhong, Hao and Xu, Congfu and Ming, Zhong},
+  title     = {Adaptive Bayesian personalized ranking for heterogeneous implicit feedbacks},
+  journal   = {Knowledge-Based Systems},
+  year      = {2015},
+  volume    = {73},
+  pages     = {173--180},
+  comment   = {BPR++
+
+sampling},
+  publisher = {Elsevier},
+}
+
+@InProceedings{Tay2018Latent,
+  author    = {Tay, Yi and Anh Tuan, Luu and Hui, Siu Cheung},
+  title     = {Latent Relational Metric Learning via Memory-based Attention for Collaborative Ranking},
+  booktitle = {Proceedings of the 2018 World Wide Web Conference},
+  year      = {2018},
+  series    = {WWW '18},
+  pages     = {729--739},
+  address   = {Republic and Canton of Geneva, Switzerland},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  abstract  = {This paper proposes a new neural architecture for collaborative ranking with implicit feedback. Our model, LRML (Latent Relational Metric Learning) is a novel metric learning approach for recommendation. More specifically, instead of simple push-pull mechanisms between user and item pairs, we propose to learn latent relations that describe each user item interaction. This helps to alleviate the potential geometric inflexibility of existing metric learning approaches. This enables not only better performance but also a greater extent of modeling capability, allowing our model to scale to a larger number of interactions. In order to do so, we employ a augmented memory module and learn to attend over these memory blocks to construct latent relations. The memory-based attention module is controlled by the user-item interaction, making the learned relation vector specific to each user-item pair. Hence, this can be interpreted as learning an exclusive and optimal relational translation for each user-item interaction. The proposed architecture demonstrates the state-of-the-art performance across multiple recommendation benchmarks. LRML outperforms other metric learning models by 6%-7.5% in terms of Hits@10 and nDCG@10 on large datasets such as Netflix and MovieLens20M. Moreover, qualitative studies also demonstrate evidence that our proposed model is able to infer and encode explicit sentiment, temporal and attribute information despite being only trained on implicit feedback. As such, this ascertains the ability of LRML to uncover hidden relational structure within implicit datasets.},
+  acmid     = {3186154},
+  doi       = {10.1145/3178876.3186154},
+  isbn      = {978-1-4503-5639-8},
+  keywords  = {attention mechanism, collaborative ranking, deep learning, implicit feedback, information retrieval, neural networks, recommender system, collaborative filtering},
+  location  = {Lyon, France},
+  numpages  = {11},
+  url       = {https://doi.org/10.1145/3178876.3186154},
+}
+
+@Article{Guo2016Personalized,
+  author    = {Guo, Weiyu and Wu, Shu and Wang, Liang and Tan, Tieniu},
+  title     = {Personalized ranking with pairwise Factorization Machines},
+  journal   = {Neurocomputing},
+  year      = {2016},
+  volume    = {214},
+  pages     = {191--200},
+  abstract  = {Pairwise learning is a vital technique for personalized ranking with implicit feedback. Given the assumption that each user is more interested in items which have been previously se- lected by the user than the remaining ones, pairwise learning algorithms can well learn users’ preference, from not only the observed user feedbacks but also the underlying interactions between users and items. However, a mass of training instances are randomly derived ac- cording to such assumption, which makes the learning procedure often converge slowly and even result in poor predictive models. In addition, the cold start problem often perplexes pairwise learning methods, since most of traditional methods in personalized ranking only take explicit ratings or implicit feedbacks into consideration. For dealing with the above issues, this work proposes a novel personalized ranking model which incorporates implicit feedback with content information by making use of Factorization Machines. For efficiently estimating the parameters of the proposed model, we develop an adaptive sampler to draw informative training instances based on content information of users and items. The exper- imental results show that, our adaptive item sampler indeed can speed up our model, and our model outperforms advanced methods in personalized ranking.},
+  comment   = {BPR
+factorization machine: order 2 feature interactions
+adaptive sampling},
+  publisher = {Elsevier},
+}
+
+@Article{Tran2016Modelling,
+  author    = {Tran, Truyen and Phung, Dinh and Venkatesh, Svetha},
+  title     = {Modelling human preferences for ranking and collaborative filtering: a probabilistic ordered partition approach},
+  journal   = {Knowledge and Information Systems},
+  year      = {2016},
+  volume    = {47},
+  number    = {1},
+  pages     = {157--188},
+  month     = {Apr},
+  issn      = {0219-3116},
+  abstract  = {Learning preference models from human generated data is an important task in modern information processing systems. Its popular setting consists of simple input ratings, assigned with numerical values to indicate their relevancy with respect to a specific query. Since ratings are often specified within a small range, several objects may have the same ratings, thus creating ties among objects for a given query. Dealing with this phenomena presents a general problem of modelling preferences in the presence of ties and being query-specific. To this end, we present in this paper a novel approach by constructing probabilistic models directly on the collection of objects exploiting the combinatorial structure induced by the ties among them. The proposed probabilistic setting allows exploration of a super-exponential combinatorial state-space with unknown numbers of partitions and unknown order among them. Learning and inference in such a large state-space are challenging, and yet we present in this paper efficient algorithms to perform these tasks. Our approach exploits discrete choice theory, imposing generative process such that the finite set of objects is partitioned into subsets in a stagewise procedure, and thus reducing the state-space at each stage significantly. Efficient Markov chain Monte Carlo algorithms are then presented for the proposed models. We demonstrate that the model can potentially be trained in a large-scale setting of hundreds of thousands objects using an ordinary computer. In fact, in some special cases with appropriate model specification, our models can be learned in linear time. We evaluate the models on two application areas: (i) document ranking with the data from the Yahoo! challenge and (ii) collaborative filtering with movie data. We demonstrate that the models are competitive against state-of-the-arts.},
+  day       = {01},
+  doi       = {10.1007/s10115-015-0840-9},
+  timestamp = {2018-08-18},
+  url       = {https://doi.org/10.1007/s10115-015-0840-9},
+}
+
+@InProceedings{Sun2017MRLR,
+  author    = {Sun, Zhu and Yang, Jie and Zhang, Jie and Bozzon, Alessandro and Chen, Yu and Xu, Chi},
+  title     = {MRLR: multi-level representation learning for personalized ranking in recommendation},
+  booktitle = {26th International Joint Conferences on Artificial Intelligence},
+  year      = {2017},
+  pages     = {2807--2813},
+  abstract  = {Representation learning (RL) has recently proven to be effective in capturing local item relation- ships by modeling item co-occurrence in individual user’s interaction record. However, the value of RL for recommendation has not reached the full poten- tial due to two major drawbacks: 1) recommenda- tion is modeled as a rating prediction problem but should essentially be a personalized ranking one; 2) multi-level organizations of items are neglected for fine-grained item relationships. We design a uni- fied Bayesian framework MRLR to learn user and item embeddings from a multi-level item organiza- tion, thus benefiting from RL as well as achieving the goal of personalized ranking. Extensive valida- tion on real-world datasets shows that MRLR con- sistently outperforms state-of-the-art algorithms},
+  comment   = { learn user and item embed- dings from both item co-rated relationships and user-specific ranked lists of items
+
+maximizing the following posterior probability, two components : item co-rated and personal ranking
+
+co-rated: soft max
+personal ranking: soft max based on MF
+category for item feature constraints
+},
+}
+
+@InProceedings{Yu2018Walkranker,
+  author       = {Yu, Lu and Zhang, Chuxu and Pei, Shichao and Sun, Guolei and Zhang, Xiangliang},
+  title        = {Walkranker: A unified pairwise ranking model with multiple relations for item recommendation},
+  year         = {2018},
+  organization = {AAAI},
+  abstract     = {Top-N item recommendation techniques, e.g., pairwise mod- els, learn the rank of users’ preferred items through separat- ing items into positive samples if user-item interactions ex- ist, and negative samples otherwise. This separation results in an important issue: the extreme imbalance between positive and negative samples, because the number of items with user actions is much less than those without actions. The prob- lem is even worse for “cold-start” users. In addition, existing learning models only consider the observed user-item prox- imity, while neglecting other useful relations, such as the un- observed but potentially helpful user-item relations, and high- order proximity in user-user, item-item relations. In this pa- per, we aim at incorporating multiple types of user-item rela- tions into a unified pairwise ranking model towards approx- imately optimizing ranking metrics mean average precision (MAP), and mean reciprocal rank (MRR). Instead of taking statical separation of positive and negative sets, we employ a random walk approach to dynamically draw positive samples from short random walk sequences, and a rank-aware nega- tive sampling method to draw negative samples for efficiently learning the proposed pairwise ranking model. The proposed method is compared with several state-of-the-art baselines on two large and sparse datasets. Experimental results show that our proposed model outperforms the other baselines with av- erage 4% at different top-N metrics, in particular for cold- start users with 6% on average.},
+}
+
+@InProceedings{Sharma2013Pairwise,
+  author    = {Sharma, Amit and Yan, Baoshi},
+  title     = {Pairwise Learning in Recommendation: Experiments with Community Recommendation on Linkedin},
+  booktitle = {Proceedings of the 7th ACM Conference on Recommender Systems},
+  year      = {2013},
+  series    = {RecSys '13},
+  pages     = {193--200},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Many online systems present a list of recommendations and infer user interests implicitly from clicks or other contextual actions. For modeling user feedback in such settings, a common approach is to consider items acted upon to be relevant to the user, and irrelevant otherwise. However, clicking some but not others conveys an implicit ordering of the presented items. Pairwise learning, which leverages such implicit ordering between a pair of items, has been successful in areas such as search ranking. In this work, we study whether pairwise learning can improve community recommendation. We first present two novel pairwise models adapted from logistic regression. Both offline and online experiments in a large real-world setting show that incorporating pairwise learning improves the recommendation performance. However, the improvement is only slight. We find that users' preferences regarding the kinds of communities they like can differ greatly, which adversely affect the effectiveness of features derived from pairwise comparisons. We therefore propose a probabilistic latent semantic indexing model for pairwise learning (Pairwise PLSI), which assumes a set of users' latent preferences between pairs of items. Our experiments show favorable results for the Pairwise PLSI model and point to the potential of using pairwise learning for community recommendation.},
+  acmid     = {2507175},
+  doi       = {10.1145/2507157.2507175},
+  isbn      = {978-1-4503-2409-0},
+  keywords  = {community recommendation, pairwise learning},
+  location  = {Hong Kong, China},
+  numpages  = {8},
+  url       = {http://doi.acm.org/10.1145/2507157.2507175},
+}
+
+@InProceedings{Christakopoulou2016Local,
+  author    = {Christakopoulou, Evangelia and Karypis, George},
+  title     = {Local Item-Item Models For Top-N Recommendation},
+  booktitle = {Proceedings of the 10th ACM Conference on Recommender Systems},
+  year      = {2016},
+  series    = {RecSys '16},
+  pages     = {67--74},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Item-based approaches based on SLIM (Sparse LInear Methods) have demonstrated very good performance for top-N recommendation; however they only estimate a single model for all the users. This work is based on the intuition that not all users behave in the same way -- instead there exist subsets of like-minded users. By using different item-item models for these user subsets, we can capture differences in their preferences and this can lead to improved performance for top-N recommendations. In this work, we extend SLIM by combining global and local SLIM models. We present a method that computes the prediction scores as a user-specific combination of the predictions derived by a global and local item-item models. We present an approach in which the global model, the local models, their user-specific combination, and the assignment of users to the local models are jointly optimized to improve the top-N recommendation performance. Our experiments show that the proposed method improves upon the standard SLIM model and outperforms competing top-N recommendation approaches.},
+  acmid     = {2959185},
+  comment   = {rating optimization 
+based on SLIM},
+  doi       = {10.1145/2959100.2959185},
+  isbn      = {978-1-4503-4035-9},
+  keywords  = {collaborative filtering, local models, slim, top-n recommendation},
+  location  = {Boston, Massachusetts, USA},
+  numpages  = {8},
+  url       = {http://doi.acm.org/10.1145/2959100.2959185},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
