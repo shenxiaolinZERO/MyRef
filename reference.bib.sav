@@ -23018,13 +23018,65 @@ The sGLSVD model estimates both global and user subset specific local models by 
   publisher = {ACM},
   abstract  = {Recommender systems are frequently used in domains in which users express their preferences in the form of graded judgments, such as ratings. Current ranking techniques are based on one of two sub-optimal approaches: either they optimize for a binary metric such as Average Precision, which discards information on relevance levels, or they optimize for Normalized Discounted Cumulative Gain (NDCG), which ignores the dependence of an item's contribution on the relevance of more highly ranked items. We address the shortcomings of existing approaches by proposing GAPfm, the Graded Average Precision factor model, which is a latent factor model for top-N recommendation in domains with graded relevance data. The model optimizes the Graded Average Precision metric that has been proposed recently for assessing the quality of ranked results lists for graded relevance. GAPfm's advantages are twofold: it maintains full information about graded relevance and also addresses the limitations of models that optimize NDCG. Experimental results show that GAPfm achieves substantial improvements on the top-N recommendation task, compared to several state-of-the-art approaches.},
   acmid     = {2505653},
-  comment   = {p},
+  comment   = {pairwise ranking optimizing graded average precision
+},
   doi       = {10.1145/2505515.2505653},
   isbn      = {978-1-4503-2263-8},
   keywords  = {collaborative filtering, graded average precision, latent factor model, ranking, recommender systems, top-n recommendation},
   location  = {San Francisco, California, USA},
   numpages  = {6},
   url       = {http://doi.acm.org/10.1145/2505515.2505653},
+}
+
+@InProceedings{Zhuang2017Representation,
+  author    = {Zhuang, Fuzhen and Luo, Dan and Yuan, Nicholas Jing and Xie, Xing and He, Qing},
+  title     = {Representation Learning with Pair-wise Constraints for Collaborative Ranking},
+  booktitle = {Proceedings of the Tenth ACM International Conference on Web Search and Data Mining},
+  year      = {2017},
+  series    = {WSDM '17},
+  pages     = {567--575},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Last decades have witnessed a vast amount of interest and research in recommendation systems. Collaborative filtering, which uses the known preferences of a group of users to make recommendations or predictions of the unknown preferences for other users, is one of the most successful approaches to build recommendation systems. Most previous collaborative filtering approaches employ the matrix factorization techniques to learn latent user feature profiles and item feature profiles. Also many subsequent works are proposed to incorporate users' social network information and items' attributions to further improve recommendation performance under the matrix factorization framework. However, the matrix factorization based methods may not make full use of the rating information, leading to unsatisfying performance. Recently deep learning has been approved to be able to find good representations in natural language processing, image classification, and so on. Along this line, we propose a collaborative ranking framework via representation learning with pair-wise constraints (REAP for short), in which autoencoder is used to simultaneously learn the latent factors of both users and items and pair-wise ranked loss defined by (user, item) pairs is considered. Extensive experiments are conducted on five data sets to demonstrate the effectiveness of the proposed framework.},
+  acmid     = {3018720},
+  comment   = {Pair-wise constraint of rank-based collaborative method prefers positive value of xˆ − yˆ when x > y. When it is violated, there should be a loss. With this constraint, ranking learning can be op- timized by minimizing the risk function with zero-one loss},
+  doi       = {10.1145/3018661.3018720},
+  isbn      = {978-1-4503-4675-7},
+  keywords  = {autoencoder, collaborative ranking, pair-wise constraints, representation learning},
+  location  = {Cambridge, United Kingdom},
+  numpages  = {9},
+  url       = {http://doi.acm.org/10.1145/3018661.3018720},
+}
+
+@Article{Zhao2018Factored,
+  author   = {Zhao, Qinghua and Zhang, Yihao and Ma, Jianfen and Duan, Qianqian},
+  title    = {Factored Item Similarity and Bayesian Personalized Ranking for Recommendation with Implicit Feedback},
+  journal  = {Arabian Journal for Science and Engineering},
+  year     = {2018},
+  month    = {Jun},
+  issn     = {2191-4281},
+  abstract = {Item recommendations aim to predict a list of items (e.g., items on Amazon website) for each user that he or she might like. In fact, implicit feedback, such as transaction records in e-commerce websites and the ``likes'' behavior in social networks website (e.g., Facebook), has been received more and more attention in the scenarios of item recommendation. The core of the recommender system is the ranking algorithm which exploits the implicit feedback and generates the personalized item list to meet user's specific preferences. In most of the previous studies, the pairwise personalized ranking techniques empirically achieve better performance than the matrix factorization and adaptive k nearest-neighbor method since the pairwise ranking methods can directly reflect the model user's ranking preference on items. In most of the recent works, factored item similarity techniques which learn the global item similarity by utilizing two low-dimensional latent factor matrices achieve better performance than other state-of-art top-N methods with predefined similarity, such as cosine similarity. The individual relative preference assumption among observed items and unobserved items are critical for the pairwise ranking methods. As a response, this paper proposes a new and improved preference assumption based on the factored item similarity and individual preference. In addition, a novel recommendation algorithm correspondingly named factored item similarity and Bayesian Personalized Ranking model is designed. The novelty of the algorithm is that it can (1) learn the global item similarity with latent factor models. (2) utilize effective pairwise ranking methods to deal with the item recommendation problems with implicit feedback. (3) assign different item weights on explicit feedback and implicit feedback. Empirical results show that this model outperforms other state-of-the-art top-N recommendation methods on two public datasets in terms of prec@5 and ndcg@5. It can be found that the advantage of FSBPR lies in its ability to exploit implicit feedback and capture global item similarity.},
+  comment  = {SVD++
+BPR style ranking!},
+  day      = {12},
+  doi      = {10.1007/s13369-018-3358-0},
+  url      = {https://doi.org/10.1007/s13369-018-3358-0},
+}
+
+@Article{Kumar2017Cosine,
+  author    = {Kumar, Bipul and Bala, Pradip Kumar},
+  title     = {Cosine based latent factor model for ranking the recommendation},
+  journal   = {Operational Research},
+  year      = {2017},
+  month     = {May},
+  issn      = {1866-1505},
+  abstract  = {The purpose of this paper is to propose a novel latent factor model that generates a ranked list of items in the recommendation list based on prior interaction with system on e-commerce platforms. The ranking of items in recommendation list is exhibited as an optimization model that optimizes the ranking metrics. The latent features of user and items are learnt using cosine based latent factor model which in turn are used to learn the ranking metric. This paper proposes cosine based latent factor model to learn the implicit features, and corresponding surrogate ranking loss function is optimized. Comprehensive evaluation on three benchmark datasets shows the considerable improvement of the proposed model on ranking metric.},
+  comment   = {directly model cosine similarity for item vectors p,q
+The probability distribution turns out to be Plackett-Luce model . In order to learn the parameters of likelihood loss we try to maximize the sum of Plackett-Luce permutation probability over all training data.},
+  day       = {25},
+  doi       = {10.1007/s12351-017-0325-6},
+  timestamp = {2018-08-19},
+  url       = {https://doi.org/10.1007/s12351-017-0325-6},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
