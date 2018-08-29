@@ -23057,7 +23057,9 @@ The sGLSVD model estimates both global and user subset specific local models by 
   issn     = {2191-4281},
   abstract = {Item recommendations aim to predict a list of items (e.g., items on Amazon website) for each user that he or she might like. In fact, implicit feedback, such as transaction records in e-commerce websites and the ``likes'' behavior in social networks website (e.g., Facebook), has been received more and more attention in the scenarios of item recommendation. The core of the recommender system is the ranking algorithm which exploits the implicit feedback and generates the personalized item list to meet user's specific preferences. In most of the previous studies, the pairwise personalized ranking techniques empirically achieve better performance than the matrix factorization and adaptive k nearest-neighbor method since the pairwise ranking methods can directly reflect the model user's ranking preference on items. In most of the recent works, factored item similarity techniques which learn the global item similarity by utilizing two low-dimensional latent factor matrices achieve better performance than other state-of-art top-N methods with predefined similarity, such as cosine similarity. The individual relative preference assumption among observed items and unobserved items are critical for the pairwise ranking methods. As a response, this paper proposes a new and improved preference assumption based on the factored item similarity and individual preference. In addition, a novel recommendation algorithm correspondingly named factored item similarity and Bayesian Personalized Ranking model is designed. The novelty of the algorithm is that it can (1) learn the global item similarity with latent factor models. (2) utilize effective pairwise ranking methods to deal with the item recommendation problems with implicit feedback. (3) assign different item weights on explicit feedback and implicit feedback. Empirical results show that this model outperforms other state-of-the-art top-N recommendation methods on two public datasets in terms of prec@5 and ndcg@5. It can be found that the advantage of FSBPR lies in its ability to exploit implicit feedback and capture global item similarity.},
   comment  = {SVD++
-BPR style ranking!},
+BPR style ranking!
+
+FSBPR},
   day      = {12},
   doi      = {10.1007/s13369-018-3358-0},
   url      = {https://doi.org/10.1007/s13369-018-3358-0},
@@ -23082,6 +23084,27 @@ L = \sum [ \ln \sum_k s_{ik} - \ln s_{ij}]+ regularizers},
   doi       = {10.1007/s12351-017-0325-6},
   timestamp = {2018-08-19},
   url       = {https://doi.org/10.1007/s12351-017-0325-6},
+}
+
+@InProceedings{Lee2013Local,
+  author    = {Lee, Joonseok and Kim, Seungyeon and Lebanon, Guy and Singer, Yoram},
+  title     = {Local low-rank matrix approximation},
+  booktitle = {International Conference on Machine Learning},
+  year      = {2013},
+  pages     = {82--90},
+}
+
+@InProceedings{Hu2016Improved,
+  author    = {J. Hu and P. Li},
+  title     = {Improved and Scalable Bradley-Terry Model for Collaborative Ranking},
+  booktitle = {2016 IEEE 16th International Conference on Data Mining (ICDM)},
+  year      = {2016},
+  pages     = {949-954},
+  month     = {Dec},
+  abstract  = {In collaborative ranking, the Bradley-Terry (BT) model is widely used for modeling pairwise user preferences. However, when this model is combined with matrix factorization on sparsely observed ratings, a challenging identifiability issue arises since the optimization will involve non-convex constraints. Besides, in some situations, fitting the Bradley-Terry model yields a numerical challenge as it may include an objective function that is unbounded from below. In this paper, we will discuss and develop a simple strategy to resolve these issues. Specifically, we propose an Improved-BT model by adding a penalty term, and we develop two parallel algorithms to make Improved-BT model scalable. Through extensive experiments on benchmark datasets, we show that our proposed method outperforms many considered state-of-the-art collaborative ranking approaches in terms of both ranking performance and time efficiency.},
+  doi       = {10.1109/ICDM.2016.0118},
+  issn      = {2374-8486},
+  keywords  = {benchmark testing;collaborative filtering;concave programming;matrix decomposition;parallel algorithms;improved scalable Bradley-Terry model;collaborative ranking;pairwise user preference modeling;matrix factorization;identifiability issue;nonconvex constraints;improved-BT model;parallel algorithms;benchmark datasets;Numerical models;Collaboration;Linear programming;Sparse matrices;Computational modeling;Optimization;Predictive models},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
