@@ -23118,6 +23118,13 @@ L = \sum [ \ln \sum_k s_{ik} - \ln s_{ij}]+ regularizers},
   publisher = {Psychological Review Company},
 }
 
+@Book{Lee2009Transforming,
+  title     = {Transforming E-Business Practices and Applications: Emerging Technologies and Concepts: Emerging Technologies and Concepts},
+  publisher = {IGI Global},
+  year      = {2009},
+  author    = {Lee, In},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
