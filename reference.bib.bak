@@ -23165,6 +23165,73 @@ WNMF=weighted NMF},
   pages     = {2619-2625},
 }
 
+@Article{Laroche2003Which,
+  author   = {Michel Laroche and Chankon Kim and Takayoshi Matsui},
+  title    = {Which decision heuristics are used in consideration set formation?},
+  journal  = {Journal of Consumer Marketing},
+  year     = {2003},
+  volume   = {20},
+  number   = {3},
+  pages    = {192-209},
+  abstract = { This study empirically investigates consumers’ use of five heuristics (conjunctive, disjunctive, lexicographic, linear additive, and geometric compensatory) in the consideration set formation, a critical first phase before actual choice behavior. Data were collected on the selection of beer brands and fast food outlets by real consumers. Using a decomposition approach in determining the consumers’ choice heuristics, it was found that the conjunctive heuristic is the most often used decision model in the consideration set formation for the two product classes. Implications for brand managers and future research directions are developed. },
+  comment  = {survey: questionaire to subjects on beer brands and fast-food outlets
+
+use different rules to "predict" the outcomes
+report success rates
+
+conjunctive 62.0%
+disjuctive 12.4%
+lexicographic 34.6%
+linear compensatory 47.8%
+geometric compensatory 37.9%},
+  doi      = {10.1108/07363760310472236},
+  eprint   = {https://doi.org/10.1108/07363760310472236},
+  url      = { 
+        https://doi.org/10.1108/07363760310472236
+    
+},
+}
+
+@InProceedings{Hauser2009Non,
+  author    = {Hauser, John R and Ding, Min and Gaskin, Steven P},
+  title     = {Non-compensatory (and compensatory) models of consideration-set decisions},
+  booktitle = {2009 Sawtooth Software Conference Proceedings, Sequin WA},
+  year      = {2009},
+}
+
+@InProceedings{Deriu2017Leveraging,
+  author    = {Deriu, Jan and Lucchi, Aurelien and De Luca, Valeria and Severyn, Aliaksei and M\"{u}ller, Simon and Cieliebak, Mark and Hofmann, Thomas and Jaggi, Martin},
+  title     = {Leveraging Large Amounts of Weakly Supervised Data for Multi-Language Sentiment Classification},
+  booktitle = {Proceedings of the 26th International Conference on World Wide Web},
+  year      = {2017},
+  series    = {WWW '17},
+  pages     = {1045--1052},
+  address   = {Republic and Canton of Geneva, Switzerland},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  abstract  = {This paper presents a novel approach for multi-lingual sentiment classification in short texts. This is a challenging task as the amount of training data in languages other than English is very limited. Previously proposed multi-lingual approaches typically require to establish a correspondence to English for which powerful classifiers are already available. In contrast, our method does not require such supervision. We leverage large amounts of weakly-supervised data in various languages to train a multi-layer convolutional network and demonstrate the importance of using pre-training of such networks. We thoroughly evaluate our approach on various multi-lingual datasets, including the recent SemEval-2016 sentiment prediction benchmark (Task 4), where we achieved state-of-the-art performance. We also compare the performance of our model trained individually for each language to a variant trained for all languages at once. We show that the latter model reaches slightly worse - but still acceptable - performance when compared to the single language model, while benefiting from better generalization properties across languages.},
+  acmid     = {3052611},
+  comment   = {A similar model used in 
+unsupervised learning -> creation of word embedding
+distant-supervision , noisy label by smiley 1 epoh
+supervised 20 epochs, on publicly available labeled dataets
+
+
+model: multi-layer CNN
+concatenating a sequence of n words represented by embeddings
+sentence matrix input
+convolutional layer, m convolutional filters of length h (word order up to h?)
+poolying layer
+hidden layer, again a linear transformation
+softmax
+},
+  doi       = {10.1145/3038912.3052611},
+  isbn      = {978-1-4503-4913-0},
+  keywords  = {multi-language, neural networks, sentiment classification, weak supervision},
+  location  = {Perth, Australia},
+  numpages  = {8},
+  url       = {https://doi.org/10.1145/3038912.3052611},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
