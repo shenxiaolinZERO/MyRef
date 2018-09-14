@@ -23232,6 +23232,88 @@ softmax
   url       = {https://doi.org/10.1145/3038912.3052611},
 }
 
+@Article{Zhou2018brief,
+  author   = {Zhou, Zhi-Hua},
+  title    = {A brief introduction to weakly supervised learning},
+  journal  = {National Science Review},
+  year     = {2018},
+  volume   = {5},
+  number   = {1},
+  pages    = {44-53},
+  abstract = {Supervised learning techniques construct predictive models by learning from a large number of training examples, where each training example has a label indicating its ground-truth output. Though current techniques have achieved great success, it is noteworthy that in many tasks it is difficult to get strong supervision information like fully ground-truth labels due to the high cost of the data-labeling process. Thus, it is desirable for machine-learning techniques to work with weak supervision. This article reviews some research progress of weakly supervised learning, focusing on three typical types of weak supervision: incomplete supervision, where only a subset of training data is given with labels; inexact supervision, where the training data are given with only coarse-grained labels; and inaccurate supervision, where the given labels are not always ground-truth.},
+  comment  = {very good survey
+typically, there are three types of weak supervision(can occur simultaneously)
+(1) incomplete supervision, only a usually small subset of training data is given with labels. 
+(1.1) active learning = human interrvention
+goal: minimize #queries (to ask experts to label)
+solution: informativeness: uncertanty sampling (single learner, least confidence) and query-by-committee (multiple learners, disagree the most)
+                representativeness (cluster centroid)
+//most of them old paper!
+(1.2)semi-supervised learning
+unlabeled data not test data
+theoretical proof of the usefulness of unlabeled data
+heuristically, unlabeled data implicitly convey some information about data distribution that can be helpful for predictive modeling cluster assmption (instances falling into the same cluster have the same class label) or manifold assumption (nearby instances have similar predictions) believe unlabeled data can be helpful to disclose which data points are similar 
+solution: generative methods, graph-based methods, low-density separation methods and disagreement-based methods
+(1.3)transductive learning
+unlabeled data exactly test data
+(2) inexact supervision, i.e. only coarse-grained labels are given (e.g. image-level instead of object-level)
+multi-instance learning
+(3) inaccurate superviision, i.e. noisy label
+crowd sourcing 
+solution: baseline: majority voting, if we can model worker quality and task difficulty, 
+crowdsourcing learning is colsely related to learning with label noise, a distinction lies in the fact that, for a crowdsourcing setting, one can conveniently draw crowd labels repeatedly for an instance. thus the goal in crowdsourcing learning is crucial to consider the cost-saving effect, and an upperbound for the minimally sufficient number of crowd labels. i.e. task assignment and budget allocation
+},
+  doi      = {10.1093/nsr/nwx106},
+  eprint   = {/oup/backfile/content_public/journal/nsr/5/1/10.1093_nsr_nwx106/2/nwx106.pdf},
+  url      = {http://dx.doi.org/10.1093/nsr/nwx106},
+}
+
+@Article{Ratner2017Snorkel,
+  author     = {Ratner, Alexander and Bach, Stephen H. and Ehrenberg, Henry and Fries, Jason and Wu, Sen and R{\'e}, Christopher},
+  title      = {Snorkel: Rapid Training Data Creation with Weak Supervision},
+  journal    = {Proc. VLDB Endow.},
+  year       = {2017},
+  volume     = {11},
+  number     = {3},
+  pages      = {269--282},
+  month      = nov,
+  issn       = {2150-8097},
+  abstract   = {Labeling training data is increasingly the largest bottleneck in deploying machine learning systems. We present Snorkel, a first-of-its-kind system that enables users to train state-of-the-art models without hand labeling any training data. Instead, users write labeling functions that express arbitrary heuristics, which can have unknown accuracies and correlations. Snorkel denoises their outputs without access to ground truth by incorporating the first end-to-end implementation of our recently proposed machine learning paradigm, data programming. We present a flexible interface layer for writing labeling functions based on our experience over the past year collaborating with companies, agencies, and research labs. In a user study, subject matter experts build models 2.8X faster and increase predictive performance an average 45.5% versus seven hours of hand labeling. We study the modeling tradeoffs in this new setting and propose an optimizer for automating tradeoff decisions that gives up to 1.8X speedup per pipeline execution. In two collaborations, with the U.S. Department of Veterans Affairs and the U.S. Food and Drug Administration, and on four open-source text and image data sets representative of other deployments, Snorkel provides 132% average improvements to predictive performance over prior heuristic approaches and comes within an average 3.60% of the predictive performance of large hand-curated training sets.},
+  acmid      = {3173077},
+  comment    = {label function
+
+label matrix from all sources:label 1 -1 0
+three factor types, representing the labeling propensity (label or unlabelled), accuracy and pairwise correlation 
+p=Z exp(\sum_m w^T \phi(label matrix, true label))
+predict y=p_w (Y|label matrix)
+
+
+train a discriminative model on probablistic labels by minimizing a noise-aware variant of the loss },
+  doi        = {10.14778/3157794.3157797},
+  issue_date = {November 2017},
+  numpages   = {14},
+  publisher  = {VLDB Endowment},
+  url        = {https://doi.org/10.14778/3157794.3157797},
+}
+
+@InProceedings{Bach2017Learning,
+  author    = {Bach, Stephen H and He, Bryan and Ratner, Alexander and R{\'e}, Christopher},
+  title     = {Learning the Structure of Generative Models without Labeled Data},
+  booktitle = {International Conference on Machine Learning},
+  year      = {2017},
+  pages     = {273--282},
+  timestamp = {2018-09-14},
+}
+
+@InProceedings{Ratner2016Data,
+  author    = {Ratner, Alexander J and De Sa, Christopher M and Wu, Sen and Selsam, Daniel and R{\'e}, Christopher},
+  title     = {Data programming: Creating large training sets, quickly},
+  booktitle = {Advances in neural information processing systems},
+  year      = {2016},
+  pages     = {3567--3575},
+  timestamp = {2018-09-14},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
