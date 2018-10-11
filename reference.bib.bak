@@ -23415,6 +23415,64 @@ The last step is to rank the extracted topics based on their contribution to the
   url       = {http://doi.acm.org/10.1145/3077136.3080715},
 }
 
+@InProceedings{Peng2015Central,
+  author    = {Peng, Min and Zhu, Jiahui and Li, Xuhui and Huang, Jiajia and Wang, Hua and Zhang, Yanchun},
+  title     = {Central Topic Model for Event-oriented Topics Mining in Microblog Stream},
+  booktitle = {Proceedings of the 24th ACM International on Conference on Information and Knowledge Management},
+  year      = {2015},
+  series    = {CIKM '15},
+  pages     = {1611--1620},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {To date, data generates and arrives in the form of stream to propagate discussions of public events in microblog services. Discovering event-oriented topics from the stream will lead to a better understanding of the change of public concern. However, as the massive scale of the data stream, traditional static topic models, such as LDA, are no longer fit for topic detection and tracking tasks. In this paper, we propose a central topic model (CenTM), where a Multi-view Clustering algorithm with Two-phase Random Walk (MC-TRW) is devised to aggregate the LDA's latent topics into central topics. Furthermore, we leverage the aggregation of central topics alternately with MC-TRW and sequential topic inference to improve the scalability in the stream fashion, so as to derive the dynamic central topic model (DCenTM). Specifically, our model is able to uncover the intrinsic characteristics of the central topics and predict the trend of their intensity along a life cycle. Experimental results demonstrate that the proposed central topic model is event-oriented and of high generalization, it therefore can dispose the topic trend prediction effectively and precisely in massive data stream.},
+  acmid     = {2806561},
+  comment   = {We are given a collection of sentiment feature time series s(t)
+and news volume time series n(t) for various topics. For a particular
+topic T, we want to detect the most important sentiment
+shifts according to s(t), and identify the news events, which have
+caused them, so that it will be possible to predict future sentiment
+changes on that topic upon observing and analyzing relevant news
+events.
+
+two-layer solution
+
+In the News layer, we aggregate the volume of the news for a
+topic into a time series, which will be further analyzed to detect
+news events. To detect a news event and extract its features we perform
+a deconvolution of news volume time series (or its fragment).
+The Sentiments layer aggregates sentiments over time for a specific
+topic, and detects interesting changes, which can be contradictions,
+outbursts of sentiments’ volume, or other situations.},
+  doi       = {10.1145/2806416.2806561},
+  isbn      = {978-1-4503-3794-6},
+  keywords  = {central topic, multi-view clustering, trend prediction},
+  location  = {Melbourne, Australia},
+  numpages  = {10},
+  url       = {http://doi.acm.org/10.1145/2806416.2806561},
+}
+
+@Article{Gerani2012Aggregation,
+  author     = {Gerani, Shima and Carman, Mark and Crestani, Fabio},
+  title      = {Aggregation Methods for Proximity-Based Opinion Retrieval},
+  journal    = {ACM Trans. Inf. Syst.},
+  year       = {2012},
+  volume     = {30},
+  number     = {4},
+  pages      = {26:1--26:36},
+  month      = nov,
+  issn       = {1046-8188},
+  abstract   = {The enormous amount of user-generated data available on the Web provides a great opportunity to understand, analyze, and exploit people’s opinions on different topics. Traditional Information Retrieval methods consider the relevance of documents to a topic but are unable to differentiate between subjective and objective documents. Opinion retrieval is a retrieval task in which not only the relevance of a document to the topic is important but also the amount of opinion expressed in the document about the topic. In this article, we address the blog post opinion retrieval task and propose methods that rank blog posts according to their relevance and opinionatedness toward a topic. We propose estimating the opinion density at each position in a document using a general opinion lexicon and kernel density functions. We propose and investigate different models for aggregating the opinion density at query terms positions to estimate the opinion score of every document. We then combine the opinion score with the relevance score based on a probabilistic justification. Experimental results on the BLOG06 dataset show that the proposed method provides significant improvement over the standard TREC baselines. The proposed models also achieve much higher performance compared to all state of the art methods.},
+  acmid      = {2382445},
+  address    = {New York, NY, USA},
+  articleno  = {26},
+  doi        = {10.1145/2382438.2382445},
+  issue_date = {November 2012},
+  keywords   = {Opinion, blog, proximity, retrieval, sentiment},
+  numpages   = {36},
+  publisher  = {ACM},
+  url        = {http://doi.acm.org/10.1145/2382438.2382445},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
