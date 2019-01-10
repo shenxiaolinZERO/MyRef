@@ -23085,6 +23085,8 @@ L = \sum [ \ln \sum_k s_{ik} - \ln s_{ij}]+ regularizers},
   pages     = {949-954},
   month     = {Dec},
   abstract  = {In collaborative ranking, the Bradley-Terry (BT) model is widely used for modeling pairwise user preferences. However, when this model is combined with matrix factorization on sparsely observed ratings, a challenging identifiability issue arises since the optimization will involve non-convex constraints. Besides, in some situations, fitting the Bradley-Terry model yields a numerical challenge as it may include an objective function that is unbounded from below. In this paper, we will discuss and develop a simple strategy to resolve these issues. Specifically, we propose an Improved-BT model by adding a penalty term, and we develop two parallel algorithms to make Improved-BT model scalable. Through extensive experiments on benchmark datasets, we show that our proposed method outperforms many considered state-of-the-art collaborative ranking approaches in terms of both ranking performance and time efficiency.},
+  comment   = {add a penalty for rating reconstructions and regularizations
+thus the optimization objective is to maximize log likelihood and (r-UV) and ||U||^2},
   doi       = {10.1109/ICDM.2016.0118},
   issn      = {2374-8486},
   keywords  = {benchmark testing;collaborative filtering;concave programming;matrix decomposition;parallel algorithms;improved scalable Bradley-Terry model;collaborative ranking;pairwise user preference modeling;matrix factorization;identifiability issue;nonconvex constraints;improved-BT model;parallel algorithms;benchmark datasets;Numerical models;Collaboration;Linear programming;Sparse matrices;Computational modeling;Optimization;Predictive models},
@@ -23510,6 +23512,67 @@ outbursts of sentiments’ volume, or other situations.},
   location  = {Ann Arbor, MI, USA},
   numpages  = {3},
   url       = {http://doi.acm.org/10.1145/3209978.3210193},
+}
+
+@InProceedings{Dehghani2017Neural,
+  author    = {Dehghani, Mostafa and Zamani, Hamed and Severyn, Aliaksei and Kamps, Jaap and Croft, W. Bruce},
+  title     = {Neural Ranking Models with Weak Supervision},
+  booktitle = {Proceedings of the 40th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  year      = {2017},
+  series    = {SIGIR '17},
+  pages     = {65--74},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Despite the impressive improvements achieved by unsupervised deep neural networks in computer vision and NLP tasks, such improvements have not yet been observed in ranking for information retrieval. The reason may be the complexity of the ranking problem, as it is not obvious how to learn from queries and documents when no supervised signal is available. Hence, in this paper, we propose to train a neural ranking model using weak supervision, where labels are obtained automatically without human annotators or any external resources (e.g., click data). To this aim, we use the output of an unsupervised ranking model, such as BM25, as a weak supervision signal. We further train a set of simple yet effective ranking models based on feed-forward neural networks. We study their effectiveness under various learning scenarios (point-wise and pair-wise models) and using different input representations (i.e., from encoding query-document pairs into dense/sparse vectors to using word embedding representation). We train our networks using tens of millions of training instances and evaluate it on two standard collections: a homogeneous news collection (Robust) and a heterogeneous large-scale web collection (ClueWeb). Our experiments indicate that employing proper objective functions and letting the networks to learn the input representation based on weakly supervised data leads to impressive performance, with over 13% and 35% MAP improvements over the BM25 model on the Robust and the ClueWeb collections. Our findings also suggest that supervised neural ranking models can greatly benefit from pre-training on large amounts of weakly labeled data that can be easily obtained from unsupervised IR models.},
+  acmid     = {3080832},
+  doi       = {10.1145/3077136.3080832},
+  isbn      = {978-1-4503-5022-8},
+  keywords  = {ad-hoc retrieval, deep learning, deep neural network, ranking model, weak supervision},
+  location  = {Shinjuku, Tokyo, Japan},
+  numpages  = {10},
+  timestamp = {2019-01-10},
+  url       = {http://doi.acm.org/10.1145/3077136.3080832},
+}
+
+@InProceedings{Nie2018Multi,
+  author    = {Nie, Yifan and Sordoni, Alessandro and Nie, Jian-Yun},
+  title     = {Multi-level Abstraction Convolutional Model with Weak Supervision for Information Retrieval},
+  booktitle = {The 41st International ACM SIGIR Conference on Research \&\#38; Development in Information Retrieval},
+  year      = {2018},
+  series    = {SIGIR '18},
+  pages     = {985--988},
+  address   = {New York, NY, USA},
+  publisher = {ACM},
+  abstract  = {Recent neural models for IR have produced good retrieval effectiveness compared with traditional models. Yet all of them assume that a single matching function should be used for all queries. In practice, user's queries may be of various nature which might require different levels of matching, from low level word matching to high level conceptual matching. To cope with this problem, we propose a multi-level abstraction convolutional model (MACM) that generates and aggregates several levels of matching scores. Weak supervision is used to address the problem of large training data. Experimental results demonstrated the effectiveness of our proposed MACM model.},
+  acmid     = {3210123},
+  comment   = {In literature , a deep neural model is constructed to represent the content
+of the document and the query , and/or their interactions or
+matching scores
+
+training: weak supervised (labeled by BM25) <q,d+,d->
+input q, d embedding
+hidden layers 
+every layer is based on the previous layer, so that to produce more abstract interaction pattern 
+
+first layer I=cos(q,d) vector
+second layer P=max_pool I
+                     C^k = f(wI+b)
+third layer P=max_pool (C last K)
+
+In order to determine the matching scores of each abstraction
+level, each max-pooled layer Pi
+, i = 0, .., L is flattened into a 1D
+vector and fed into a fully connected MLP to output a scalar score
+Si at this level.
+In order to combine the matching scores of different abstraction levels Si, a gating 
+},
+  doi       = {10.1145/3209978.3210123},
+  isbn      = {978-1-4503-5657-2},
+  keywords  = {information retrieval, neural network, ranking},
+  location  = {Ann Arbor, MI, USA},
+  numpages  = {4},
+  timestamp = {2019-01-10},
+  url       = {http://doi.acm.org/10.1145/3209978.3210123},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
