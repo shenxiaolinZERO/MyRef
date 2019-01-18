@@ -23614,6 +23614,111 @@ In order to combine the matching scores of different abstraction levels Si, a ga
   url       = {http://doi.acm.org/10.1145/3209978.3210041},
 }
 
+@Article{Shen2017Recent,
+  author    = {Shen, Shi-Qi and Lin, Yan-Kai and Tu, Cun-Chao and Zhao, Yu and Liu, Zhi-Yuan and Sun, Mao-Song and others},
+  title     = {Recent advances on neural headline generation},
+  journal   = {Journal of Computer Science and Technology},
+  year      = {2017},
+  volume    = {32},
+  number    = {4},
+  pages     = {768--784},
+  abstract  = {Recently, neural models have been proposed for headline generation by learning to map documents to headlines
+with recurrent neural network. In this work, we give a detailed introduction and comparison of existing work and recent
+improvements in neural headline generation, with particular attention on how encoders, decoders and neural model training
+strategies alter the overall performance of the headline generation system. Furthermore, we perform quantitative analysis of
+most existing neural headline generation systems and summarize several key factors that impact the performance of headline
+generation systems. Meanwhile, we carry on detailed error analysis to typical neural headline generation systems in order
+to gain more comprehension. Our results and conclusions are hoped to benefit future research studies.},
+  comment   = {e},
+  publisher = {Springer},
+  timestamp = {2019-01-14},
+}
+
+@InProceedings{Chae2009Predicting,
+  author    = {Chae, Jieun and Nenkova, Ani},
+  title     = {Predicting the Fluency of Text with Shallow Structural Features: Case Studies of Machine Translation and Human-written Text},
+  booktitle = {Proceedings of the 12th Conference of the European Chapter of the Association for Computational Linguistics},
+  year      = {2009},
+  series    = {EACL '09},
+  pages     = {139--147},
+  address   = {Stroudsburg, PA, USA},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {Sentence fluency is an important component of overall text readability but few studies in natural language processing have sought to understand the factors that define it. We report the results of an initial study into the predictive power of surface syntactic statistics for the task; we use fluency assessments done for the purpose of evaluating machine translation. We find that these features are weakly but significantly correlated with fluency. Machine and human translations can be distinguished with accuracy over 80%. The performance of pairwise comparison of fluency is also very high---over 90% for a multi-layer perceptron classifier. We also test the hypothesis that the learned models capture general fluency properties applicable to human-written text. The results do not support this hypothesis: prediction accuracy on the new data is only 57%. This finding suggests that developing a dedicated, task-independent corpus of fluency judgments will be beneficial for further investigations of the problem.},
+  acmid     = {1609082},
+  location  = {Athens, Greece},
+  numpages  = {9},
+  url       = {http://dl.acm.org/citation.cfm?id=1609067.1609082},
+}
+
+@InProceedings{Wiseman2017Challenges,
+  author    = {Wiseman, Sam and Shieber, Stuart and Rush, Alexander},
+  title     = {Challenges in Data-to-Document Generation},
+  booktitle = {Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2017},
+  pages     = {2253--2263},
+  abstract  = {Recent neural models have shown significant progress on the problem of generating short descriptive texts conditioned on a small number of database records. In this work, we suggest a slightly more difficult data-to-text generation task, and investigate how effective current approaches are on this task. In particular, we introduce a new, large-scale corpus of data records paired with descriptive documents, propose a series of extractive evaluation methods for analyzing performance, and obtain baseline results using current neural generation methods. Experiments show that these models produce fluent text, but fail to convincingly approximate human-generated documents. Moreover, even templated baselines exceed the performance of these neural models on some metrics, though copy- and reconstruction-based extensions lead to noticeable improvements.},
+  timestamp = {2019-01-18},
+}
+
+@InProceedings{Whitehead2018Incorporating,
+  author    = {Whitehead, Spencer and Ji, Heng and Bansal, Mohit and Chang, Shih-Fu and Voss, Clare},
+  title     = {Incorporating Background Knowledge into Video Description Generation},
+  booktitle = {Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2018},
+  pages     = {3992--4001},
+  abstract  = {Most previous efforts toward video captioning focus on generating generic descriptions,
+such as, “A man is talking.” We collect a
+news video dataset to generate enriched descriptions that include important background
+knowledge, such as named entities and related
+events, which allows the user to fully understand the video content. We develop an approach that uses video meta-data to retrieve
+topically related news documents for a video
+and extracts the events and named entities
+from these documents. Then, given the video
+as well as the extracted events and entities,
+we generate a description using a Knowledgeaware Video Description network. The model
+learns to incorporate entities found in the topically related documents into the description
+via an entity pointer network and the generation procedure is guided by the event and entity types from the topically related documents
+through a knowledge gate, which is a gating
+mechanism added to the model’s decoder that
+takes a one-hot vector of these types. We evaluate our approach on the new dataset of news
+videos we have collected, establishing the first
+benchmark for this dataset as well as proposing a new metric to evaluate these descriptions.},
+  comment   = {
+model:
+encoder -decoder
+LSTM encoder, for each time stamp
+CNN to extract video frame
+LSTM decoder, with a knowledge gate (based on previous timestamp)
+knowledge vector = entity embedding + onehot event/entity embedding
+
+a stof switch pointer network to perform the selection of generating words or entities
+
+
+evalutation: meteor (translation) Rouge-L, entity F1, Auto-Entity F1, Event F1, Aut-Event F1},
+  timestamp = {2019-01-18},
+}
+
+@Article{Bao2019Text,
+  author    = {J. Bao and D. Tang and N. Duan and Z. Yan and M. Zhou and T. Zhao},
+  title     = {Text Generation From Tables},
+  journal   = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  year      = {2019},
+  volume    = {27},
+  number    = {2},
+  pages     = {311-320},
+  month     = {Feb},
+  issn      = {2329-9290},
+  abstract  = {This paper proposes a neural generative model, namely Table2Seq, to generate a natural language sentence based on a table. Specifically, the model maps a table to continuous vectors and then generates a natural language sentence by leveraging the semantics of a table. Since rare words, e.g., entities and values, usually appear in a table, we develop a flexible copying mechanism that selectively replicates contents from the table to the output sequence. We conduct extensive experiments to demonstrate the effectiveness of our Table2Seq model and the utility of the designed copying mechanism. On the WIKIBIO and SIMPLEQUESTIONS datasets, the Table2Seq model improves the state-of-the-art results from 34.70 to 40.26 and from 33.32 to 39.12 in terms of BLEU-4 scores, respectively. Moreover, we construct an open-domain dataset WIKITABLETEXT that includes 13 318 descriptive sentences for 4962 tables. Our Table2Seq model achieves a BLEU-4 score of 38.23 on WIKITABLETEXT outperforming template-based and language model based approaches. Furthermore, through experiments on 1 M table-query pairs from a search engine, our Table2Seq model considering the structured part of a table, i.e., table attributes and table cells, as additional information outperforms a sequence-to-sequence model considering only the sequential part of a table, i.e., table caption.},
+  comment   = {encoder: just embeddig?
+decoder: rnn
+global-local
+copy a new copy model?
+},
+  doi       = {10.1109/TASLP.2018.2878381},
+  keywords  = {natural language processing;neural nets;text analysis;text generation;continuous vectors;table semantics;flexible copying mechanism;selective content replication;WIKIBIO dataset;SIMPLEQUESTIONS dataset;BLEU-4 scores;WIKITABLETEXT dataset;descriptive sentences;search engine;table-query pairs;language model based approaches;natural language sentence;neural generative model;table caption;table cells;table attributes;Table2Seq model;Natural languages;Task analysis;Search engines;Neural networks;Speech processing;Decoding;Encyclopedias;Table-to-text generation;Table2Seq;neural network;natural language processing;artificial intelligence},
+  timestamp = {2019-01-18},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
