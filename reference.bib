@@ -23629,7 +23629,14 @@ strategies alter the overall performance of the headline generation system. Furt
 most existing neural headline generation systems and summarize several key factors that impact the performance of headline
 generation systems. Meanwhile, we carry on detailed error analysis to typical neural headline generation systems in order
 to gain more comprehension. Our results and conclusions are hoped to benefit future research studies.},
-  comment   = {e},
+  comment   = {encoder-decoder
+word position 
+syntactic and semantic information of input sentence
+more linguistic features
+RNN, BRNN
+decoder 
+maximal likelihood/ minimal risk
+error analysis},
   publisher = {Springer},
   timestamp = {2019-01-14},
 }
@@ -23717,6 +23724,17 @@ copy a new copy model?
   doi       = {10.1109/TASLP.2018.2878381},
   keywords  = {natural language processing;neural nets;text analysis;text generation;continuous vectors;table semantics;flexible copying mechanism;selective content replication;WIKIBIO dataset;SIMPLEQUESTIONS dataset;BLEU-4 scores;WIKITABLETEXT dataset;descriptive sentences;search engine;table-query pairs;language model based approaches;natural language sentence;neural generative model;table caption;table cells;table attributes;Table2Seq model;Natural languages;Task analysis;Search engines;Neural networks;Speech processing;Decoding;Encyclopedias;Table-to-text generation;Table2Seq;neural network;natural language processing;artificial intelligence},
   timestamp = {2019-01-18},
+}
+
+@InProceedings{dong2017learning,
+  author    = {Dong, Li and Huang, Shaohan and Wei, Furu and Lapata, Mirella and Zhou, Ming and Xu, Ke},
+  title     = {Learning to generate product reviews from attributes},
+  booktitle = {Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, Long Papers},
+  year      = {2017},
+  volume    = {1},
+  pages     = {623--632},
+  abstract  = {Automatically generating product reviews is a meaningful, yet not well-studied task in sentiment analysis. Traditional natural language generation methods rely extensively on hand-crafted rules and predefined templates. This paper presents an attention-enhanced attribute-to-sequence model to generate product reviews for given attribute information, such as user, product, and rating. The attribute encoder learns to represent input attributes as vectors. Then, the sequence decoder generates reviews by conditioning its output on these vectors. We also introduce an attention mechanism to jointly generate reviews and align words with input attributes. The proposed model is trained end-to-end to maximize the likelihood of target product reviews given the attributes. We build a publicly available dataset for the review generation task by leveraging the Amazon book reviews and their metadata. Experiments on the dataset show that our approach outperforms baseline methods and the attention mechanism significantly improves the performance of our model.},
+  comment   = {attributes = user, product, rating -> MLP encoder ->stack RNN + LSTM + attention decoder. Experiments, BLEU, sentiment polarity human annotation, components w/o BLEU, case study attention & sentences },
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
